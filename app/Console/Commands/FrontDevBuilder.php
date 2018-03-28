@@ -5,16 +5,11 @@ namespace Ensphere\Gnaw\Console\Commands;
 use Ensphere\Gnaw\Contracts\Utilities;
 use Ensphere\Gnaw\PCSSBuilder;
 use Ensphere\Gnaw\PCSSFile;
-use Ensphere\Gnaw\Traits\Color;
-use Ensphere\Gnaw\Traits\Media;
-use Ensphere\Gnaw\Traits\Size;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Storage;
 
 class FrontDevBuilder extends Command
 {
-
-    use Color, Size, Media;
 
     /**
      * @var string
@@ -133,33 +128,6 @@ class FrontDevBuilder extends Command
         if( ( $file->isConfigFile() && $this->distributeConfig ) || ! $file->isConfigFile() ) {
             $file->distribute();
         }
-    }
-
-    protected function colours()
-    {
-        $types = [
-            'background-color',
-            'color'
-        ];
-        foreach( $types as $type ) {
-            foreach( $this->colors as $colour => $hex ) {
-                $this->return .= '.' . $type . '\:light-' . $colour . " {\n";
-                $this->return .= "\t{$type}: " . '$colour--light-' . "{$colour};\n";
-                $this->return .= "}\n";
-                $this->return .= '.' . $type . '\:' . $colour . " {\n";
-                $this->return .= "\t{$type}: " . '$colour--' . "{$colour};\n";
-                $this->return .= "}\n";
-                $this->return .= '.' . $type . '\:dark-' . $colour . " {\n";
-                $this->return .= "\t{$type}: " . '$colour--dark-' . "{$colour};\n";
-                $this->return .= "}\n";
-            }
-        }
-        foreach( $this->colors as $colour => $hex ) {
-            $this->config .= '$colour--light-' . "{$colour}: " . $this->adjustBrightness( $hex, 100 ) . ";\n";
-            $this->config .= '$colour--' . "{$colour}: {$hex};\n";
-            $this->config .= '$colour--dark-' . "{$colour}: " . $this->adjustBrightness( $hex, -100 ) . ";\n\n";
-        }
-        $this->config .= "\n";
     }
 
     protected function spacing()

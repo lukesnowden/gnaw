@@ -21,6 +21,14 @@ trait Color
     ];
 
     /**
+     * @var array
+     */
+    protected $colorTypes = [
+        'background-color',
+        'color'
+    ];
+
+    /**
      * @param $hex
      * @param $steps
      * @return string
