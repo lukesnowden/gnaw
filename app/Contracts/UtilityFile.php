@@ -2,9 +2,10 @@
 
 namespace Ensphere\Gnaw\Contracts;
 
+use Ensphere\Gnaw\Abs\File;
 use Ensphere\Gnaw\PCSSFile;
 
-class UtilityFile implements PCSSFile
+class UtilityFile extends File implements PCSSFile
 {
 
 
@@ -21,6 +22,6 @@ class UtilityFile implements PCSSFile
      */
     public function distribute()
     {
-        // TODO: Implement distribute() method.
+        dd($this);
     }
 }

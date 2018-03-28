@@ -20,29 +20,36 @@ class Utilities implements PCSSBuilder
     /**
      *
      */
-    protected function colours()
+    protected function colors()
     {
         $colorFile = new UtilityFile();
+        $colorFile->filename( 'colors.pcss' );
+        $colorFile->path( 'utilities' );
 
+        $content = '';
         foreach( $this->colorTypes as $type ) {
             foreach( $this->colors as $colour => $hex ) {
-                $this->return .= '.' . $type . '\:light-' . $colour . " {\n";
-                $this->return .= "\t{$type}: " . '$colour--light-' . "{$colour};\n";
-                $this->return .= "}\n";
-                $this->return .= '.' . $type . '\:' . $colour . " {\n";
-                $this->return .= "\t{$type}: " . '$colour--' . "{$colour};\n";
-                $this->return .= "}\n";
-                $this->return .= '.' . $type . '\:dark-' . $colour . " {\n";
-                $this->return .= "\t{$type}: " . '$colour--dark-' . "{$colour};\n";
-                $this->return .= "}\n";
+                $content .= '.' . $type . '\:light-' . $colour . " {\n";
+                $content .= "\t{$type}: " . '$colour--light-' . "{$colour};\n";
+                $content .= "}\n";
+                $content .= '.' . $type . '\:' . $colour . " {\n";
+                $content .= "\t{$type}: " . '$colour--' . "{$colour};\n";
+                $content .= "}\n";
+                $content .= '.' . $type . '\:dark-' . $colour . " {\n";
+                $content .= "\t{$type}: " . '$colour--dark-' . "{$colour};\n";
+                $content .= "}\n";
             }
         }
-        foreach( $this->colors as $colour => $hex ) {
-            $this->config .= '$colour--light-' . "{$colour}: " . $this->adjustBrightness( $hex, 100 ) . ";\n";
-            $this->config .= '$colour--' . "{$colour}: {$hex};\n";
-            $this->config .= '$colour--dark-' . "{$colour}: " . $this->adjustBrightness( $hex, -100 ) . ";\n\n";
-        }
-        $this->config .= "\n";
+
+        $colorFile->content( $content );
+        $this->files[] = $colorFile;
+
+        //foreach( $this->colors as $colour => $hex ) {
+        //    $this->config .= '$colour--light-' . "{$colour}: " . $this->adjustBrightness( $hex, 100 ) . ";\n";
+        //    $this->config .= '$colour--' . "{$colour}: {$hex};\n";
+        //    $this->config .= '$colour--dark-' . "{$colour}: " . $this->adjustBrightness( $hex, -100 ) . ";\n\n";
+        //}
+        //$this->config .= "\n";
     }
 
     /**
@@ -50,6 +57,7 @@ class Utilities implements PCSSBuilder
      */
     public function generateFiles() : array
     {
+        $this->colors();
         return $this->files;
     }
 }
