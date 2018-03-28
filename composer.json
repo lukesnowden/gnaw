@@ -1,0 +1,19 @@
+{
+    "name": "ensphere/gnaw",
+    "description": "Generates front end scaffold",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Luke Snowden",
+            "email": "mail@lukesnowden.co.uk"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Ensphere\\Gnaw\\": "app/"
+        }
+    },
+    "require": {
+        "laravel/framework": "5.2.*"
+    }
+}
