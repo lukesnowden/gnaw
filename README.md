@@ -33,3 +33,47 @@ This would be a typical configuration:
     ],
 // ...    
 ```
+
+#### Utilities
+
+##### Columns
+
+Current max columns is 16;
+
+* `col:1-of-2`
+* `col:5-of-16`
+* `col:4-of-12`
+
+##### Colours
+
+* `background-color:blue`
+* `color:red`
+
+##### Spacing
+
+* `padding:large`
+* `padding-left:large`
+* `padding-top:small`
+* `padding-right:medium`
+* `padding-bottom:extra-large`
+* `padding-y-axis:very-small`
+* `padding-x-axis:large`
+
+
+* `margin:large`
+* `margin-left:large`
+* `margin-top:small`
+* `margin-right:medium`
+* `margin-bottom:extra-large`
+* `margin-y-axis:very-small`
+* `margin-x-axis:large`
+
+##### Media Query Vagrants
+
+This is a mobile first utility framework so no prefix is mobile use. Prefixes available ar `tablet--`, `desktop--`, `wide--` and `huge--`.
+
+* `tablet--padding-x-axis:large`
+* `dektop--col:2-of-12`
+* `wide--margin-left:small`
+* `huge--color:blue`
+
