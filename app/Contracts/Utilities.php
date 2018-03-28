@@ -8,10 +8,10 @@ class Utilities implements PCSSBuilder
 {
 
     /**
-     * @return mixed
+     * @return array
      */
-    public function generateFiles()
+    public function generateFiles() : array
     {
-        // TODO: Implement generateFiles() method.
+        return [];
     }
 }

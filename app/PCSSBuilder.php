@@ -6,8 +6,8 @@ interface PCSSBuilder
 {
 
     /**
-     * @return mixed
+     * @return array
      */
-    public function generateFiles();
+    public function generateFiles() : array;
 
 }

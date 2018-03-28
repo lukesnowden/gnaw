@@ -29,6 +29,11 @@ class FrontDevBuilder extends Command
     ];
 
     /**
+     * @var string
+     */
+    protected $postCssDisk = 'post-css';
+
+    /**
      * @var array
      */
     protected $files = [];
@@ -58,7 +63,7 @@ class FrontDevBuilder extends Command
      *
      * @var string
      */
-    protected $signature = 'front';
+    protected $signature = 'gnaw';
 
     /**
      * The console command description.
@@ -105,12 +110,18 @@ class FrontDevBuilder extends Command
 
     protected function checkStorageDisk()
     {
-
+        if( ! config( "filesystems.disks.{$this->postCssDisk}" ) ) {
+            $this->error( "Disk [{$this->postCssDisk}] not set in config. See readme for more info" );
+            exit;
+        }
     }
 
+    /**
+     * @return void
+     */
     protected function configGenerate()
     {
-
+        $this->distributeConfig = $this->confirm( "Do you want to generate the config files? This will overwrite previous generated config files" );
     }
 
     /**
