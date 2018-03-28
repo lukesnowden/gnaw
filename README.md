@@ -34,9 +34,11 @@ This would be a typical configuration:
 // ...    
 ```
 
-#### Utilities
+## Usage
 
-##### Columns
+### Utilities
+
+#### Columns
 
 Current max columns is 16;
 
@@ -44,12 +46,12 @@ Current max columns is 16;
 * `col:5-of-16`
 * `col:4-of-12`
 
-##### Colours
+#### Colours
 
 * `background-color:blue`
 * `color:red`
 
-##### Spacing
+#### Spacing
 
 * `padding:large`
 * `padding-left:large`
@@ -68,7 +70,7 @@ Current max columns is 16;
 * `margin-y-axis:very-small`
 * `margin-x-axis:large`
 
-##### Media Query Vagrants
+#### Media Query Vagrants
 
 This is a mobile first utility framework so no prefix is mobile use. Prefixes available ar `tablet--`, `desktop--`, `wide--` and `huge--`.
 
