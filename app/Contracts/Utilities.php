@@ -23,7 +23,7 @@ class Utilities implements PCSSBuilder
      */
     protected function colors()
     {
-        $colorFile = new UtilityFile();
+        $colorFile = new GnawFile();
         $colorFile->filename( 'colors.pcss' );
         $colorFile->path( 'utilities/segments' );
         $content = '';
@@ -85,7 +85,7 @@ class Utilities implements PCSSBuilder
      */
     protected function columns()
     {
-        $columnFile = new UtilityFile();
+        $columnFile = new GnawFile();
         $columnFile->filename( 'columns.pcss' );
         $columnFile->path( 'utilities/segments' );
         $content = '';
@@ -120,7 +120,7 @@ class Utilities implements PCSSBuilder
      */
     protected function helpers()
     {
-        $helpersFile = new UtilityFile();
+        $helpersFile = new GnawFile();
         $helpersFile->filename( 'helpers.pcss' );
         $helpersFile->path( 'utilities/segments' );
         $content = '';
@@ -150,7 +150,7 @@ class Utilities implements PCSSBuilder
     protected function spacing()
     {
 
-        $spacingFile = new UtilityFile();
+        $spacingFile = new GnawFile();
         $spacingFile->filename( 'spacing.pcss' );
         $spacingFile->path( 'utilities/segments' );
         $content = '';

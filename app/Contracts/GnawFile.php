@@ -5,7 +5,7 @@ namespace Ensphere\Gnaw\Contracts;
 use Ensphere\Gnaw\Abs\File;
 use Ensphere\Gnaw\PCSSFile;
 
-class UtilityFile extends File implements PCSSFile
+class GnawFile extends File implements PCSSFile
 {
 
     /**

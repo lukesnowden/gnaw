@@ -2,6 +2,7 @@
 
 namespace Ensphere\Gnaw\Console\Commands;
 
+use Ensphere\Gnaw\Contracts\Resets;
 use Ensphere\Gnaw\Contracts\Utilities;
 use Ensphere\Gnaw\PCSSBuilder;
 use Ensphere\Gnaw\PCSSFile;
@@ -19,6 +20,7 @@ class FrontDevBuilder extends Command
      * @var array
      */
     protected $contracts = [
+        Resets::class,
         Utilities::class
     ];
 
