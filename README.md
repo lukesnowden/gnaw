@@ -34,6 +34,12 @@ This would be a typical configuration:
 // ...    
 ```
 
+Optionally, you may publish the configuration file with (it is advised to publish and store your variables in the application config file and not the Post CSS config files):
+
+```
+php artisan vendor:publish --provider="Ensphere\Gnaw\AppServiceProvider" --tag="config"
+```
+
 ## Usage
 
 ### Utilities
@@ -70,7 +76,7 @@ Current max columns is 16;
 * `margin-y-axis:very-small`
 * `margin-x-axis:large`
 
-#### Media Query Vagrants
+#### Media Query Variants
 
 This is a mobile first utility framework so no prefix is mobile use. Prefixes available ar `tablet--`, `desktop--`, `wide--` and `huge--`.
 
