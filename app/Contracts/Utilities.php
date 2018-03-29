@@ -6,11 +6,12 @@ use Ensphere\Gnaw\PCSSBuilder;
 use Ensphere\Gnaw\Traits\Color;
 use Ensphere\Gnaw\Traits\Media;
 use Ensphere\Gnaw\Traits\Size;
+use Ensphere\Gnaw\Traits\Spacing;
 
 class Utilities implements PCSSBuilder
 {
 
-    use Color, Size, Media;
+    use Color, Size, Media, Spacing;
 
     /**
      * @var array
@@ -63,6 +64,11 @@ class Utilities implements PCSSBuilder
         $configFile->path( 'utilities' );
         $content = '';
 
+        foreach( $this->sizes as $name => $value ) {
+            $content .= '$space--' . "{$name}: " . ( $this->baseUnit * $value ) . "px;\n";
+        }
+        $content .= "\n";
+
         foreach( $this->colors as $colour => $hex ) {
             $content .= '$colour--light-' . "{$colour}: " . $this->adjustBrightness( $hex, 100 ) . ";\n";
             $content .= '$colour--' . "{$colour}: {$hex};\n";
@@ -110,12 +116,87 @@ class Utilities implements PCSSBuilder
     }
 
     /**
+     * @return void
+     */
+    protected function helpers()
+    {
+        $helpersFile = new UtilityFile();
+        $helpersFile->filename( 'helpers.pcss' );
+        $helpersFile->path( 'utilities/segments' );
+        $content = '';
+
+        $this->mediarize( function( $prefix ) use( &$content ) {
+            if( $prefix ) {
+                $content .= "@media(--" . trim( $prefix, '--' ) . ") {\n";
+            }
+            $content .= ".{$prefix}full-width { width:100%; max-width:100%; }\n";
+            $content .= ".{$prefix}not-a-list { list-style: none; margin: 0; padding: 0; }\n";
+            $content .= ".{$prefix}float\:left { float:left; }\n";
+            $content .= ".{$prefix}float\:right { float:right; }\n";
+            $content .= ".{$prefix}children\:same-height { display: flex; > * { flex: 1 1 auto; } }\n";
+            $content .= ".{$prefix}child\:vertically-aligned { position:relative; > * { position:relative; top: 50%; transform: translateY(-50%); } }\n";
+            if( $prefix ) {
+                $content .= "}\n";
+            }
+        });
+
+        $helpersFile->content( $content );
+        $this->files[] = $helpersFile;
+    }
+
+    /**
+     * @return void
+     */
+    protected function spacing()
+    {
+
+        $spacingFile = new UtilityFile();
+        $spacingFile->filename( 'spacing.pcss' );
+        $spacingFile->path( 'utilities/segments' );
+        $content = '';
+
+        $this->mediarize( function( $prefix ) use( &$content ) {
+            if( $prefix ) {
+                $content .= "@media(--" . trim( $prefix, '--' ) . ") {\n";
+            }
+            foreach( $this->spacingTypes as $type ) {
+                foreach( $this->sizes as $name => $value ) {
+                    $content .= ".{$prefix}" . $type . '\:' . $name . " {\n";
+                    $content .= "\t{$type}: " . '$space--' . "{$name};\n";
+                    $content .= "}\n";
+                    $content .= ".{$prefix}" . $type . '-y-axis\:' . $name . " {\n";
+                    $content .= "\t{$type}-top: " . '$space--' . "{$name};\n";
+                    $content .= "\t{$type}-bottom: " . '$space--' . "{$name};\n";
+                    $content .= "}\n";
+                    $content .= ".{$prefix}" . $type . '-x-axis\:' . $name . " {\n";
+                    $content .= "\t{$type}-left: " . '$space--' . "{$name};\n";
+                    $content .= "\t{$type}-right: " . '$space--' . "{$name};\n";
+                    $content .= "}\n";
+                    foreach( $this->spacingPositions as $position ) {
+                        $content .= ".{$prefix}" . $type . '-' . $position . '\:' . $name . " {\n";
+                        $content .= "\t{$type}-{$position}: " . '$space--' . "{$name};\n";
+                        $content .= "}\n";
+                    }
+                }
+            }
+            if( $prefix ) {
+                $content .= "}\n";
+            }
+        });
+
+        $spacingFile->content( $content );
+        $this->files[] = $spacingFile;
+    }
+
+    /**
      * @return array
      */
     public function generateFiles() : array
     {
         $this->colors();
         $this->columns();
+        $this->spacing();
+        $this->helpers();
         $this->configs();
         return $this->files;
     }
