@@ -17,7 +17,7 @@ class Resets implements PCSSBuilder
     /**
      * @var string
      */
-    protected $route = __DIR__ . '/../../resources/resets/';
+    protected $route = __DIR__ . '/../../resources/pcss/resets/';
 
     /**
      * @return array
