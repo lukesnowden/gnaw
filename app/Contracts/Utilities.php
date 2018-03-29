@@ -28,6 +28,9 @@ class Utilities implements PCSSBuilder
         $content = '';
 
         $this->mediarize( function( $prefix ) use( &$content ) {
+            if( $prefix ) {
+                $content .= "@media(--" . trim( $prefix, '--' ) . ") {\n";
+            }
             foreach( $this->colorTypes as $type ) {
                 foreach( $this->colors as $colour => $hex ) {
                     $content .= ".{$prefix}" . $type . '\:light-' . $colour . " {\n";
@@ -41,20 +44,13 @@ class Utilities implements PCSSBuilder
                     $content .= "}\n";
                 }
             }
+            if( $prefix ) {
+                $content .= "}\n";
+            }
         });
 
         $colorFile->content( $content );
         $this->files[] = $colorFile;
-    }
-
-    /**
-     * @param $callback
-     */
-    protected function mediarize( $callback )
-    {
-        foreach( [ '' ] + $this->medias as $media ) {
-            $callback( preg_replace( "/^--$/", "", "{$media}--" ) );
-        }
     }
 
     /**
@@ -79,11 +75,47 @@ class Utilities implements PCSSBuilder
     }
 
     /**
+     * @return void
+     */
+    protected function columns()
+    {
+        $columnFile = new UtilityFile();
+        $columnFile->filename( 'columns.pcss' );
+        $columnFile->path( 'utilities/segments' );
+        $content = '';
+
+        $this->mediarize( function( $prefix ) use( &$content ) {
+            if( $prefix ) {
+                $content .= "@media(--" . trim( $prefix, '--' ) . ") {\n";
+            }
+            $content .= ".{$prefix}col\:full-width {\n";
+            $content .= "\tlost-column: 1/1;\n";
+            $content .= "}\n";
+            $maxColumns = [ 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16 ];
+            while( $maxColumns ) {
+                $count = array_shift( $maxColumns );
+                for( $x = 1; $x < $count; $x++ ) {
+                    $content .= ".{$prefix}col\:" . $x . "-of-" . $count . " {\n";
+                    $content .= "\tlost-column: {$x}/{$count};\n";
+                    $content .= "}\n";
+                }
+            }
+            if( $prefix ) {
+                $content .= "}\n";
+            }
+        });
+
+        $columnFile->content( $content );
+        $this->files[] = $columnFile;
+    }
+
+    /**
      * @return array
      */
     public function generateFiles() : array
     {
         $this->colors();
+        $this->columns();
         $this->configs();
         return $this->files;
     }
