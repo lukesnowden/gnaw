@@ -76,6 +76,24 @@ Current max columns is 16;
 * `margin-y-axis:very-small`
 * `margin-x-axis:large`
 
+#### Helpers
+
+* `full-width`
+* `not-a-list`
+* `float:left` | `float:right`
+* `children:same-height`
+* `child:vertically-aligned`
+
+example;
+
+```html
+<ul class="not-a-list children:same-height">
+    <li class="child:vertically-aligned"><img src="http://placehold.it/40x40" alt=""></li>
+    <li class="child:vertically-aligned"><img src="http://placehold.it/40x60" alt=""></li>
+    <li class="child:vertically-aligned"><img src="http://placehold.it/40x80" alt=""></li>
+</ul>
+```
+
 #### Media Query Variants
 
 This is a mobile first utility framework so no prefix is mobile use. Prefixes available ar `tablet--`, `desktop--`, `wide--` and `huge--`.
