@@ -33,7 +33,7 @@ class Utilities implements PCSSBuilder
                 $content .= "@media(--" . trim( $prefix, '--' ) . ") {\n";
             }
             foreach( $this->colorTypes as $type ) {
-                foreach( $this->colors as $colour => $hex ) {
+                foreach( config( 'gnaw.colors' ) as $colour => $shades ) {
                     $content .= ".{$prefix}" . $type . '\:light-' . $colour . " {\n";
                     $content .= "\t{$type}: " . '$colour--light-' . "{$colour};\n";
                     $content .= "}\n";
@@ -64,15 +64,15 @@ class Utilities implements PCSSBuilder
         $configFile->path( 'utilities' );
         $content = '';
 
-        foreach( $this->sizes as $name => $value ) {
-            $content .= '$space--' . "{$name}: " . ( $this->baseUnit * $value ) . "px;\n";
+        foreach( config( 'gnaw.spacing' ) as $name => $value ) {
+            $content .= '$space--' . "{$name}: {$value};\n";
         }
         $content .= "\n";
 
-        foreach( $this->colors as $colour => $hex ) {
-            $content .= '$colour--light-' . "{$colour}: " . $this->adjustBrightness( $hex, 100 ) . ";\n";
-            $content .= '$colour--' . "{$colour}: {$hex};\n";
-            $content .= '$colour--dark-' . "{$colour}: " . $this->adjustBrightness( $hex, -100 ) . ";\n\n";
+        foreach( config( 'gnaw.colors' ) as $colour => $shades ) {
+            $content .= '$colour--light-' . "{$colour}: " . $shades['light'] . ";\n";
+            $content .= '$colour--' . "{$colour}: " . $shades['default'] . ";\n";
+            $content .= '$colour--dark-' . "{$colour}: " . $shades['dark'] . ";\n\n";
         }
         $content .= "\n";
 
@@ -160,7 +160,7 @@ class Utilities implements PCSSBuilder
                 $content .= "@media(--" . trim( $prefix, '--' ) . ") {\n";
             }
             foreach( $this->spacingTypes as $type ) {
-                foreach( $this->sizes as $name => $value ) {
+                foreach( config( 'gnaw.spacing' ) as $name => $value ) {
                     $content .= ".{$prefix}" . $type . '\:' . $name . " {\n";
                     $content .= "\t{$type}: " . '$space--' . "{$name};\n";
                     $content .= "}\n";
