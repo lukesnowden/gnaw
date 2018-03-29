@@ -2,6 +2,8 @@
 
 namespace Ensphere\Gnaw\Abs;
 
+use Illuminate\Support\Facades\Storage;
+
 abstract class File
 {
 
@@ -19,6 +21,11 @@ abstract class File
      * @var string
      */
     protected $content = '';
+
+    /**
+     * @var string
+     */
+    protected $disk = 'local';
 
     /**
      * @param null|string $filename
@@ -41,7 +48,7 @@ abstract class File
         if( is_null( $path ) ) {
             return $this->path;
         }
-        $this->path = $path;
+        $this->path = trim( $path, '/' );
     }
 
     /**
@@ -54,6 +61,14 @@ abstract class File
             return $this->content;
         }
         $this->content = $content;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function distribute()
+    {
+        Storage::disk( $this->disk )->put( "{$this->path}/{$this->filename}", $this->content );
     }
 
 }

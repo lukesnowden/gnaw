@@ -6,7 +6,6 @@ use Ensphere\Gnaw\Contracts\Utilities;
 use Ensphere\Gnaw\PCSSBuilder;
 use Ensphere\Gnaw\PCSSFile;
 use Illuminate\Console\Command;
-use Illuminate\Support\Facades\Storage;
 
 class FrontDevBuilder extends Command
 {
@@ -94,13 +93,6 @@ class FrontDevBuilder extends Command
         foreach( $this->files as $file ) {
             $this->distributeFiles( $file );
         }
-        //$this->spacing();
-        //$this->colours();
-        //$this->columns();
-        //$this->helpers();
-        //Storage::disk( 'css' )->put( 'utilities/settings.pcss', $this->return );
-        ////Storage::disk( 'css' )->put( 'utilities/config.pcss', $this->config );
-        //$this->info('saved...');
     }
 
     protected function checkStorageDisk()

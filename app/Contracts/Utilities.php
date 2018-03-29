@@ -24,7 +24,7 @@ class Utilities implements PCSSBuilder
     {
         $colorFile = new UtilityFile();
         $colorFile->filename( 'colors.pcss' );
-        $colorFile->path( 'utilities' );
+        $colorFile->path( 'utilities/segments' );
 
         $content = '';
         foreach( $this->colorTypes as $type ) {

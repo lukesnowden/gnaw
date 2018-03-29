@@ -8,6 +8,10 @@ use Ensphere\Gnaw\PCSSFile;
 class UtilityFile extends File implements PCSSFile
 {
 
+    /**
+     * @var string
+     */
+    protected $disk = 'post-css';
 
     /**
      * @return mixed
@@ -17,11 +21,4 @@ class UtilityFile extends File implements PCSSFile
         return false;
     }
 
-    /**
-     * @return mixed
-     */
-    public function distribute()
-    {
-        dd($this);
-    }
 }
