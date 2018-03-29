@@ -20,7 +20,9 @@ trait Media
      */
     protected function mediarize( $callback )
     {
-        foreach( [ '' ] + $this->medias as $media ) {
+        $medias = $this->medias;
+        array_unshift( $medias, '' );
+        foreach( $medias as $media ) {
             $callback( preg_replace( "/^--$/", "", "{$media}--" ) );
         }
     }
