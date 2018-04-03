@@ -14,7 +14,7 @@ Next, you must install the service provider to `config/app.php`:
 ```php
 'providers' => [
     // ...
-    Ensphere\Gnaw\AppServiceProvider::class,
+    Ensphere\Gnaw\Providers\AppServiceProvider::class,
 ];
 ```
 
