@@ -1,0 +1,67 @@
+/* ============================================================
+    * Base - Text
+============================================================ */
+
+p, a, span, li {
+	font-size: $font-size;
+}
+
+.heading--very-large {
+	font-size: $heading--very-large-font-size;
+	line-height: calc( $heading--very-large-font-size + ( ( $heading--very-large-font-size / 100 ) * $line-height-percentage ) );
+}
+
+.heading--large {
+	font-size: $heading--large-font-size;
+	line-height: calc( $heading--large-font-size + ( ( $heading--large-font-size / 100 ) * $line-height-percentage ) );
+}
+
+.heading--medium {
+	font-size: $heading--medium-font-size;
+	line-height: calc( $font-size--medium + ( ( $font-size--medium / 100 ) * $line-height-percentage ) );
+}
+
+.heading--small {
+	font-size: $font-size--small;
+	line-height: calc( $font-size--small + ( ( $font-size--small / 100 ) * $line-height-percentage ) );
+}
+
+.heading--very-small {
+	font-size: $font-size--very-small;
+	line-height: calc( $font-size--very-small + ( ( $font-size--very-small / 100 ) * $line-height-percentage ) );
+}
+
+.heading--very-large,
+.heading--large,
+.heading--medium,
+.heading--small,
+.heading--very-small
+{
+	color: $heading--color;
+	font-family: $heading--font-family;
+	font-weight: bold;
+	margin: 0 0 $heading--spacing 0;
+}
+
+a {
+	text-decoration: none;
+	color: $anchor--color;
+	&:hover {
+		color: $anchor--hover-color;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
