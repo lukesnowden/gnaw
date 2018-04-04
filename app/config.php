@@ -130,7 +130,7 @@ return [
     'container' => [
 
         'default-padding' => '10',
-        'column-gutter-size' => '30',
+        'column-gutter-size' => 'spacing.medium',
 
         'sizes' => [
             'tablet' => [
