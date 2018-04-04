@@ -72,16 +72,17 @@ class Utilities implements PCSSBuilder
             $content .= "\tlost-column: 1/1;\n";
             $content .= "}\n";
             $maxColumns = [ 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16 ];
+            $gutterSize = gnaw_config( 'gnaw.container.column-gutter-size' );
             while( $maxColumns ) {
                 $count = array_shift( $maxColumns );
                 for( $x = 1; $x < $count; $x++ ) {
                     $content .= ".{$prefix}col\:{$x}-of-{$count} {\n";
-                    $content .= "   width: calc(100% * {$x}/{$count} - " . gnaw_config( 'gnaw.container.column-gutter-size' ) . "px);\n";
+                    $content .= "   width: calc( 100% * {$x}/{$count} - ( {$gutterSize}px - {$gutterSize}px * {$x}/{$count} ) );\n";
                     $content .= "}\n";
 
                     $content .= ".{$prefix}col\:{$x}-of-{$count}:nth-child(1n) {\n";
                     $content .= "    float: left;\n";
-                    $content .= "    margin-right: " . gnaw_config( 'gnaw.container.column-gutter-size' ) . "px;\n";
+                    $content .= "    margin-right: {$gutterSize}px;\n";
                     $content .= "    clear: none;\n";
                     $content .= "}\n";
 
