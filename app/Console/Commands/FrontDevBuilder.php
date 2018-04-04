@@ -2,6 +2,7 @@
 
 namespace Ensphere\Gnaw\Console\Commands;
 
+use Ensphere\Gnaw\Contracts\Helpers;
 use Ensphere\Gnaw\Contracts\Resets;
 use Ensphere\Gnaw\Contracts\Utilities;
 use Ensphere\Gnaw\Contracts\Base;
@@ -23,8 +24,9 @@ class FrontDevBuilder extends Command
      */
     protected $contracts = [
         Resets::class,
+        Base::class,
+        Helpers::class,
         Utilities::class,
-        Base::class
     ];
 
     /**
@@ -36,11 +38,6 @@ class FrontDevBuilder extends Command
      * @var array
      */
     protected $files = [];
-
-    /**
-     * @var bool
-     */
-    protected $distributeConfig = true;
 
     /**
      * The name and signature of the console command.
@@ -59,7 +56,7 @@ class FrontDevBuilder extends Command
      *
      * @var string
      */
-    protected $description = 'Creates a Post CSS Utility File';
+    protected $description = 'Creates a single .css utility file';
 
     /**
      * @var string

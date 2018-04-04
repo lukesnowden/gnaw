@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Ensphere\Gnaw\Contracts;
-
 
 use Ensphere\Gnaw\PCSSBuilder;
 
