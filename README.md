@@ -37,7 +37,7 @@ This would be a typical configuration:
 Optionally, you may publish the configuration file with (it is advised to publish and store your variables in the application config file and not the Post CSS config files):
 
 ```
-php artisan vendor:publish --provider="Ensphere\Gnaw\AppServiceProvider" --tag="config"
+php artisan vendor:publish --provider="Ensphere\Gnaw\Providers\AppServiceProvider" --tag="config"
 ```
 
 ## Usage
