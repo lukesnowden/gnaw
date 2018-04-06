@@ -26,8 +26,11 @@ class FontSizes extends SelectorGenerator implements Generator
             }
             foreach( config( 'gnaw.text.font-sizes' ) as $name => $details ) {
                 $fontSize = gnaw_dot_notation( $details['font-size'] ) . 'px';
+                $lineHeight = line_height( $fontSize );
+
                 $content .= ".{$prefix}font-size\:{$name} {\n";
                 $content .= "   font-size: {$fontSize};\n";
+                $content .= "   line-height: {$lineHeight};\n";
                 $content .= "}\n";
             }
             if( $prefix ) {
