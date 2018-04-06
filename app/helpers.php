@@ -29,5 +29,6 @@ function gnaw_dot_notation( $str )
  */
 function line_height( $fontSize, $percentage = null )
 {
-    return gnaw_config( $fontSize ) + ( ( gnaw_config( $fontSize ) / 100 ) * gnaw_config( 'gnaw.text.line-height-percentage' ) ) . 'px';
+    $fontSize = is_string( $fontSize ) ? gnaw_config( $fontSize ) : $fontSize;
+    return $fontSize * ( 1 + ( gnaw_config( 'gnaw.text.line-height-percentage' ) / 100 ) ) . 'px';
 }
