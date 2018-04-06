@@ -7,6 +7,24 @@ return [
     'font-size' => '16',
     'line-height-percentage' => '40',
 
+    'font-sizes' => [
+        'very-small' => [
+            'font-size' => '8'
+        ],
+        'small' => [
+            'font-size' => '12'
+        ],
+        'medium' => [
+            'font-size' => 'text.font-size'
+        ],
+        'large' => [
+            'font-size' => '22'
+        ],
+        'very-large' => [
+            'font-size' => '34'
+        ]
+    ],
+
     'headings' => [
 
         'color' => 'colors.black.default',

@@ -216,18 +216,8 @@ class Utilities implements PCSSBuilder
     }
 
     /**
-     * @return array
+     * @return void
      */
-    public function generateFiles() : array
-    {
-        $this->colors();
-        $this->columns();
-        $this->spacing();
-        $this->helpers();
-        $this->buttons();
-        return $this->files;
-    }
-
     protected function buttons()
     {
         $buttonsFile = new GnawFile();
@@ -324,6 +314,49 @@ class Utilities implements PCSSBuilder
         $buttonsFile->content( $content );
         $this->files[] = $buttonsFile;
 
+    }
+
+    /**
+     * @return array
+     */
+    public function generateFiles() : array
+    {
+        $this->colors();
+        $this->columns();
+        $this->spacing();
+        $this->helpers();
+        $this->buttons();
+        $this->fontSizes();
+        return $this->files;
+    }
+
+    /**
+     * @return void;
+     */
+    protected function fontSizes()
+    {
+        $file = new GnawFile();
+        $file->filename( 'font-sizes.pcss' );
+        $file->path( 'utilities' );
+        $content = '';
+
+        $this->mediarize( function( $prefix, $size ) use( &$content ) {
+            if( $prefix ) {
+                $content .= "@media(min-width: {$size}px) {\n";
+            }
+            foreach( config( 'gnaw.text.font-sizes' ) as $name => $details ) {
+                $fontSize = gnaw_dot_notation( $details['font-size'] ) . 'px';
+                $content .= ".{$prefix}font-size\:{$name} {\n";
+                $content .= "   font-size: {$fontSize};\n";
+                $content .= "}\n";
+            }
+            if( $prefix ) {
+                $content .= "}\n";
+            }
+        });
+
+        $file->content( $content );
+        $this->files[] = $file;
     }
 
     /**

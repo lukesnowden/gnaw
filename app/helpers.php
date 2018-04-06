@@ -7,10 +7,19 @@
 function gnaw_config( $selector )
 {
     $value = config( $selector );
-    if( is_string( $value ) && str_contains( $value, '.' ) ) {
-        return config( 'gnaw.' . $value );
+    return gnaw_dot_notation( $value );
+}
+
+/**
+ * @param $str
+ * @return mixed
+ */
+function gnaw_dot_notation( $str )
+{
+    if( is_string( $str ) && str_contains( $str, '.' ) ) {
+        return config( 'gnaw.' . $str );
     }
-    return $value;
+    return $str;
 }
 
 /**
