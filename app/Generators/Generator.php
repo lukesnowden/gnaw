@@ -10,6 +10,6 @@ interface Generator
     /**
      * @return GnawFile
      */
-    public function generate(): GnawFile
+    public function generate(): GnawFile;
 
 }
