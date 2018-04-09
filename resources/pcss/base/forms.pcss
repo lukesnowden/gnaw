@@ -1,0 +1,88 @@
+
+form {
+    margin-bottom: $space--medium;
+}
+
+fieldset {
+    background: none;
+    padding: $space--medium;
+    border: 1px solid $form--border-color;
+    margin-bottom: $space--medium;
+}
+
+fieldset legend {
+    padding: 0 $space--small;
+    font-weight: bold;
+}
+
+label {
+    width: 100%;
+    margin-bottom: 3px;
+    display: inline-block;
+}
+
+label abbr {
+    display: none;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="search"],
+input[type="number"],
+input[type="password"],
+input[type="tel"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="url"],
+textarea {
+    background: none;
+    border: 1px solid $form--border-color;
+    border-radius: $form--border-radius;
+    color: $form--color;
+    font-size: $form--font-size;
+    line-height: $form--line-height;
+    margin-bottom: $space--medium;
+    outline: none;
+    padding: $space--small $space--large;
+    width: 100%;
+    outline: 0;
+}
+
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+input[type="search"]::placeholder,
+input[type="number"]::placeholder,
+input[type="password"]::placeholder,
+input[type="tel"]::placeholder,
+input[type="date"]::placeholder,
+input[type="datetime"]::placeholder,
+input[type="datetime-local"]::placeholder,
+input[type="month"]::placeholder,
+input[type="week"]::placeholder,
+input[type="time"]::placeholder,
+input[type="url"]::placeholder,
+textarea {
+    color: $form--color;
+    opacity: 0.75;
+}
+
+textarea {
+    resize: vertical;
+}
+
+select {
+    max-width: 100%;
+    width: auto;
+    vertical-align: top;
+}
+
+input[type="file"] {
+    margin-bottom: $space--small;
+    outline: none;
+    padding: $space--very-small 0;
+    line-height: 1;
+}
