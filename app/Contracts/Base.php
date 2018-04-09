@@ -1,9 +1,15 @@
 <?php
 
-
 namespace Ensphere\Gnaw\Contracts;
 
-
+use Ensphere\Gnaw\Generators\Base\Code;
+use Ensphere\Gnaw\Generators\Base\Container;
+use Ensphere\Gnaw\Generators\Base\Forms;
+use Ensphere\Gnaw\Generators\Base\Images;
+use Ensphere\Gnaw\Generators\Base\Lists;
+use Ensphere\Gnaw\Generators\Base\Page;
+use Ensphere\Gnaw\Generators\Base\Tables;
+use Ensphere\Gnaw\Generators\Base\Text;
 use Ensphere\Gnaw\PCSSBuilder;
 
 class Base implements PCSSBuilder
@@ -15,120 +21,36 @@ class Base implements PCSSBuilder
     protected $files = [];
 
     /**
-     * @var string
+     * @var array
      */
-    protected $route = __DIR__ . '/../../resources/pcss/base/';
+    protected $generators = [
+        Code::class,
+        Container::class,
+        Forms::class,
+        Images::class,
+        Lists::class,
+        Page::class,
+        Tables::class,
+        Text::class
+    ];
 
     /**
      * @return array
      */
     public function generateFiles(): array
     {
-        $this->files[] = $this->textFile();
-        $this->files[] = $this->formsFile();
-        $this->files[] = $this->codeFile();
-        $this->files[] = $this->imageFile();
-        $this->files[] = $this->tablesFile();
-        $this->files[] = $this->containerFile();
-        $this->files[] = $this->pageFile();
-        $this->files[] = $this->listsFile();
+        foreach( $this->generators as $generator ) {
+            $this->gnawFile( ( new $generator )->generate() );
+        }
         return $this->files;
     }
 
     /**
-     * @return GnawFile
+     * @param GnawFile $file
      */
-    protected function textFile(): GnawFile
+    private function gnawFile( GnawFile $file )
     {
-        $file = new GnawFile();
-        $file->filename( 'text.pcss' );
-        $file->path( 'base' );
-        $file->content( file_get_contents( "{$this->route}text.pcss" ) );
-        return $file;
-    }
-
-    /**
-     * @return GnawFile
-     */
-    protected function formsFile(): GnawFile
-    {
-        $file = new GnawFile();
-        $file->filename( 'forms.pcss' );
-        $file->path( 'base' );
-        $file->content( file_get_contents( "{$this->route}forms.pcss" ) );
-        return $file;
-    }
-
-    /**
-     * @return GnawFile
-     */
-    protected function imageFile(): GnawFile
-    {
-        $file = new GnawFile();
-        $file->filename( 'images.pcss' );
-        $file->path( 'base' );
-        $file->content( file_get_contents( "{$this->route}images.pcss" ) );
-        return $file;
-    }
-
-    /**
-     * @return GnawFile
-     */
-    protected function codeFile(): GnawFile
-    {
-        $file = new GnawFile();
-        $file->filename( 'code.pcss' );
-        $file->path( 'base' );
-        $file->content( file_get_contents( "{$this->route}code.pcss" ) );
-        return $file;
-    }
-
-    /**
-     * @return GnawFile
-     */
-    protected function tablesFile(): GnawFile
-    {
-        $file = new GnawFile();
-        $file->filename( 'tables.pcss' );
-        $file->path( 'base' );
-        $file->content( file_get_contents( "{$this->route}tables.pcss" ) );
-        return $file;
-    }
-
-    /**
-     * @return GnawFile
-     */
-    protected function containerFile(): GnawFile
-    {
-        $file = new GnawFile();
-        $file->filename( 'container.pcss' );
-        $file->path( 'base' );
-        $file->content( file_get_contents( "{$this->route}container.pcss" ) );
-        return $file;
-    }
-
-    /**
-     * @return GnawFile
-     */
-    protected function pageFile(): GnawFile
-    {
-        $file = new GnawFile();
-        $file->filename( 'page.pcss' );
-        $file->path( 'base' );
-        $file->content( file_get_contents( "{$this->route}page.pcss" ) );
-        return $file;
-    }
-
-    /**
-     * @return GnawFile
-     */
-    protected function listsFile(): GnawFile
-    {
-        $file = new GnawFile();
-        $file->filename( 'lists.pcss' );
-        $file->path( 'base' );
-        $file->content( file_get_contents( "{$this->route}lists.pcss" ) );
-        return $file;
+        $this->files[] = $file;
     }
 
     /**
@@ -200,6 +122,5 @@ class Base implements PCSSBuilder
         }
         return $css;
     }
-
 
 }

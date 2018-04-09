@@ -2,6 +2,7 @@
 
 namespace Ensphere\Gnaw\Contracts;
 
+use Ensphere\Gnaw\Generators\Helpers\ClearFix;
 use Ensphere\Gnaw\PCSSBuilder;
 
 class Helpers implements PCSSBuilder
@@ -18,22 +19,21 @@ class Helpers implements PCSSBuilder
     protected $route = __DIR__ . '/../../resources/pcss/helpers/';
 
     /**
+     * @var array
+     */
+    protected $generators = [
+        ClearFix::class
+    ];
+
+    /**
      * @return array
      */
     public function generateFiles(): array
     {
-        $this->files[] = $this->clearfixFile();
+        foreach( $this->generators as $generator ) {
+            $this->gnawFile( ( new $generator )->generate() );
+        }
         return $this->files;
-    }
-
-    /**
-     * @return GnawFile
-     */
-    protected function clearfixFile(): GnawFile
-    {
-        $file = new GnawFile();
-        $file->content( file_get_contents( "{$this->route}clearfix.gnaw" ) );
-        return $file;
     }
 
     /**
@@ -43,4 +43,13 @@ class Helpers implements PCSSBuilder
     {
         return [];
     }
+
+    /**
+     * @param GnawFile $file
+     */
+    private function gnawFile( GnawFile $file )
+    {
+        $this->files[] = $file;
+    }
+
 }

@@ -2,6 +2,8 @@
 
 namespace Ensphere\Gnaw\Contracts;
 
+use Ensphere\Gnaw\Generators\Resets\Normalise;
+use Ensphere\Gnaw\Generators\Resets\Reset;
 use Ensphere\Gnaw\PCSSBuilder;
 
 class Resets implements PCSSBuilder
@@ -13,42 +15,22 @@ class Resets implements PCSSBuilder
     protected $files = [];
 
     /**
-     * @var string
+     * @var array
      */
-    protected $route = __DIR__ . '/../../resources/pcss/resets/';
+    protected $generators = [
+        Normalise::class,
+        Reset::class
+    ];
 
     /**
      * @return array
      */
     public function generateFiles(): array
     {
-        $this->files[] = $this->resetFile();
-        $this->files[] = $this->normalizeFile();
+        foreach( $this->generators as $generator ) {
+            $this->gnawFile( ( new $generator )->generate() );
+        }
         return $this->files;
-    }
-
-    /**
-     * @return GnawFile
-     */
-    protected function resetFile()
-    {
-        $file = new GnawFile();
-        $file->filename( 'reset.pcss' );
-        $file->path( 'resets' );
-        $file->content( file_get_contents( "{$this->route}reset.pcss" ) );
-        return $file;
-    }
-
-    /**
-     * @return GnawFile
-     */
-    protected function normalizeFile()
-    {
-        $file = new GnawFile();
-        $file->filename( 'normalize.pcss' );
-        $file->path( 'resets' );
-        $file->content( file_get_contents( "{$this->route}normalize.pcss" ) );
-        return $file;
     }
 
     /**
@@ -56,9 +38,15 @@ class Resets implements PCSSBuilder
      */
     public function getReplacements(): array
     {
-        return [
+        return [];
+    }
 
-        ];
+    /**
+     * @param GnawFile $file
+     */
+    private function gnawFile( GnawFile $file )
+    {
+        $this->files[] = $file;
     }
 
 }
