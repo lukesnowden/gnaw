@@ -34,9 +34,33 @@ class Menus extends SelectorGenerator implements Generator
             }
             foreach( $this->directions as $direction ) {
                 foreach( config( 'gnaw.spacing' ) as $spacingName => $spacingValue ) {
-                    $content .= ".{$prefix}menu\:{$direction}\:{$spacingName} {\n";
 
-                    $content .= "},\n";
+                    $fontSize = gnaw_config( "gnaw.text.font-sizes.{$spacingName}.font-size" ) . 'px';
+                    $lineHeight = line_height( (int) $fontSize );
+                    $space = gnaw_config( "gnaw.spacing.{$spacingName}" );
+                    $padding = ( $space / 2 ) . "px {$space}px";
+
+                    $content .= ".{$prefix}menu\:{$direction}\:{$spacingName} {\n";
+                    $content .= "display: inline-block;\n";
+                    $content .= "list-style:none;\n";
+                    $content .= "padding: 0;\n";
+                    $content .= "margin: 0;\n";
+                    $content .= "font-size: {$fontSize};\n";
+                    $content .= "line-height: {$lineHeight};\n";
+                    $content .= "}\n";
+
+                    $content .= ".{$prefix}menu\:{$direction}\:{$spacingName} > li {\n";
+                    $content .= "display: inline-block;\n";
+                    $content .= "color: inherit;\n";
+                    $content .= "margin: 0;\n";
+                    $content .= "padding: 0;\n";
+                    $content .= "}\n";
+
+                    $content .= ".{$prefix}menu\:{$direction}\:{$spacingName} > li > a {\n";
+                    $content .= "display: block;\n";
+                    $content .= "color: inherit;\n";
+                    $content .= "padding: {$padding};\n";
+                    $content .= "}\n";
                 }
             }
             if( $prefix ) {
