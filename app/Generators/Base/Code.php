@@ -16,7 +16,7 @@ class Code extends SelectorGenerator implements Generator
     /**
      * @var string
      */
-    protected $route = __DIR__ . '/../../../resources/pcss/base/';
+    protected $route = __DIR__ . '/../../../resources/core-styles/base/';
 
     /**
      * @return GnawFile
