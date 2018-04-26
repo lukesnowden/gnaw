@@ -2,6 +2,7 @@
 
 namespace Ensphere\Gnaw\Contracts;
 
+use Ensphere\Gnaw\Generators\Utilities\Menus;
 use Ensphere\Gnaw\PCSSBuilder;
 use Ensphere\Gnaw\Generators\Utilities\Buttons;
 use Ensphere\Gnaw\Generators\Utilities\Colors;
@@ -28,7 +29,8 @@ class Utilities implements PCSSBuilder
         FontSizes::class,
         Helpers::class,
         Spacing::class,
-        Buttons::class
+        Buttons::class,
+        Menus::class
     ];
 
     /**

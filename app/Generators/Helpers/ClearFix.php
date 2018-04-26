@@ -16,7 +16,7 @@ class ClearFix extends SelectorGenerator implements Generator
     /**
      * @var string
      */
-    protected $route = __DIR__ . '/../../resources/pcss/helpers/';
+    protected $route = __DIR__ . '/../../../resources/core-styles/helpers/';
 
     /**
      * @return GnawFile

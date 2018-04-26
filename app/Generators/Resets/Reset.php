@@ -16,7 +16,7 @@ class Reset extends SelectorGenerator implements Generator
     /**
      * @var string
      */
-    protected $route = __DIR__ . '/../../resources/pcss/resets/';
+    protected $route = __DIR__ . '/../../../resources/core-styles/resets/';
 
     /**
      * @return GnawFile
@@ -24,7 +24,7 @@ class Reset extends SelectorGenerator implements Generator
     public function generate(): GnawFile
     {
         $file = new GnawFile();
-        $file->content( file_get_contents( "{$this->route}reset.pcss" ) );
+        $file->content( file_get_contents( "{$this->route}reset.gnaw" ) );
         return $file;
     }
 

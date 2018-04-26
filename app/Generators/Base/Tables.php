@@ -16,7 +16,7 @@ class Tables extends SelectorGenerator implements Generator
     /**
      * @var string
      */
-    protected $route = __DIR__ . '/../../resources/pcss/base/';
+    protected $route = __DIR__ . '/../../../resources/core-styles/base/';
 
     /**
      * @return GnawFile
@@ -24,7 +24,7 @@ class Tables extends SelectorGenerator implements Generator
     public function generate(): GnawFile
     {
         $file = new GnawFile();
-        $file->content( file_get_contents( "{$this->route}tables.pcss" ) );
+        $file->content( file_get_contents( "{$this->route}tables.gnaw" ) );
         return $file;
     }
 }
