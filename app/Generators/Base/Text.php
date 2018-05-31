@@ -24,7 +24,17 @@ class Text extends SelectorGenerator implements Generator
     public function generate(): GnawFile
     {
         $file = new GnawFile();
-        $file->content( file_get_contents( "{$this->route}text.gnaw" ) );
+        $this->mediarize( function( $prefix, $size ) use( &$content ) {
+            if( $prefix ) {
+                $content .= "@media(min-width: {$size}px) {\n";
+            }
+            $content .= str_replace( [ '{$prefix}' ], [ $prefix ], file_get_contents( "{$this->route}text--heading.gnaw" ) );
+            if( $prefix ) {
+                $content .= "}\n";
+            }
+        });
+        $content .= file_get_contents( "{$this->route}text.gnaw" );
+        $file->content( $content );
         return $file;
     }
 }

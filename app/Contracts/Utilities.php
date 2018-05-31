@@ -24,13 +24,13 @@ class Utilities implements PCSSBuilder
      * @var array
      */
     protected $generators = [
+        Menus::class,
         Colors::class,
         Columns::class,
         FontSizes::class,
         Helpers::class,
         Spacing::class,
         Buttons::class,
-        Menus::class
     ];
 
     /**

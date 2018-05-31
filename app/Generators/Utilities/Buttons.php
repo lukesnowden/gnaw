@@ -57,7 +57,7 @@ class Buttons extends SelectorGenerator implements Generator
                     $content .= "   display: inline-block;\n";
                     $content .= "   text-align: center;\n";
                     $content .= "   padding: {$padding}px {$paddingX2}px;\n";
-                    $content .= "   background-color: {$color};\n";
+                    $content .= "   background-color: transparent;\n";
                     if( $gradient ) {
                         $content .= "   background-image: linear-gradient(180deg,hsla(0,0%,100%,0),rgba(0,0,0,.2));\n";
                     }
