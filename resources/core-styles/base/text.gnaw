@@ -10,6 +10,7 @@ p:last-child {
 a {
 	text-decoration: none;
 	color: $anchor--color;
+	transition: $anchor--transition;
 }
 
 a:hover {

@@ -79,6 +79,7 @@ class Base implements PCSSBuilder
             '$heading--spacing' => gnaw_config( 'gnaw.text.headings.spacing' ) . 'px',
 
             '$anchor--color' => gnaw_config( 'gnaw.text.anchors.color' ),
+            '$anchor--transition' => config( 'gnaw.text.anchors.transition' ),
             '$anchor--hover-color' => gnaw_config( 'gnaw.text.anchors.hover-color' ),
 
             '$space--very-large' => gnaw_config( 'gnaw.spacing.very-large' ) . 'px',

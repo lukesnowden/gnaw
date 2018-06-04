@@ -25,10 +25,27 @@ class Helpers extends SelectorGenerator implements Generator
             if( $prefix ) {
                 $content .= "@media(min-width: {$size}px) {\n";
             }
+            $content .= ".{$prefix}position\:absolute { position: absolute; }\n";
+            $content .= ".{$prefix}position\:relative { position: relative; }\n";
+            $content .= ".{$prefix}position\:static { position: static; }\n";
+
+            $content .= ".{$prefix}stick\:right\:middle { position: absolute; right: 0; top: 50%; transform: translateY(-50%); }\n";
+            $content .= ".{$prefix}stick\:left\:middle { position: absolute; left: 0; top: 50%; transform: translateY(-50%); }\n";
+
+            $content .= ".{$prefix}z-index\:low { z-index:1; }\n";
+            $content .= ".{$prefix}z-index\:medium { z-index:10; }\n";
+            $content .= ".{$prefix}z-index\:high { z-index:50; }\n";
+
+            $content .= ".{$prefix}overflow\:hidden { overflow: hidden; }\n";
+            $content .= ".{$prefix}overflow\:visible { overflow: visible; }\n";
+
+            $content .= ".{$prefix}font-weight\:normal { font-weight: normal; }\n";
+            $content .= ".{$prefix}font-weight\:bold { font-weight: bold; }\n";
             $content .= ".{$prefix}text-align\:left { text-align:left; }\n";
             $content .= ".{$prefix}text-align\:center { text-align:center; }\n";
             $content .= ".{$prefix}text-align\:right { text-align:right; }\n";
-            $content .= ".{$prefix}full-width { width:100%; max-width:100%; }\n";
+            $content .= ".{$prefix}width\:full { width:100%; max-width:100%; }\n";
+            $content .= ".{$prefix}width\:auto { width:auto; max-width:auto; }\n";
             $content .= ".{$prefix}not-a-list { list-style: none; margin: 0; padding: 0; }\n";
             $content .= ".{$prefix}float\:left { float:left; }\n";
             $content .= ".{$prefix}float\:right { float:right; }\n";

@@ -27,20 +27,41 @@ class Spacing extends SelectorGenerator implements Generator
             }
             foreach( $this->spacingTypes as $type ) {
                 foreach( config( 'gnaw.spacing' ) as $name => $value ) {
-                    $content .= ".{$prefix}" . $type . '\:' . $name . " {\n";
-                    $content .= "\t{$type}: " . '$space--' . "{$name};\n";
+
+                    $content .= ".{$prefix}{$type}\:{$name} {\n";
+                    $content .= "\t{$type}: {$value}px;\n";
                     $content .= "}\n";
-                    $content .= ".{$prefix}" . $type . '-y-axis\:' . $name . " {\n";
-                    $content .= "\t{$type}-top: " . '$space--' . "{$name};\n";
-                    $content .= "\t{$type}-bottom: " . '$space--' . "{$name};\n";
+
+                    $content .= ".{$prefix}{$type}-y-axis\:{$name} {\n";
+                    $content .= "\t{$type}-top: {$value}px;\n";
+                    $content .= "\t{$type}-bottom: {$value}px;\n";
                     $content .= "}\n";
-                    $content .= ".{$prefix}" . $type . '-x-axis\:' . $name . " {\n";
-                    $content .= "\t{$type}-left: " . '$space--' . "{$name};\n";
-                    $content .= "\t{$type}-right: " . '$space--' . "{$name};\n";
+
+                    $content .= ".{$prefix}{$type}-x-axis\:{$name} {\n";
+                    $content .= "\t{$type}-left: {$value}px;\n";
+                    $content .= "\t{$type}-right: {$value}px;\n";
                     $content .= "}\n";
+
+                    $content .= ".{$prefix}{$type}\:none {\n";
+                    $content .= "\t{$type}: 0;\n";
+                    $content .= "}\n";
+
+                    $content .= ".{$prefix}{$type}-y-axis\:none {\n";
+                    $content .= "\t{$type}-top: 0;\n";
+                    $content .= "\t{$type}-bottom: 0;\n";
+                    $content .= "}\n";
+
+                    $content .= ".{$prefix}{$type}-x-axis\:none {\n";
+                    $content .= "\t{$type}-left: 0;\n";
+                    $content .= "\t{$type}-right: 0;\n";
+                    $content .= "}\n";
+
                     foreach( $this->spacingPositions as $position ) {
-                        $content .= ".{$prefix}" . $type . '-' . $position . '\:' . $name . " {\n";
-                        $content .= "\t{$type}-{$position}: " . '$space--' . "{$name};\n";
+                        $content .= ".{$prefix}{$type}-{$position}\:{$name} {\n";
+                        $content .= "\t{$type}-{$position}: {$value}px;\n";
+                        $content .= "}\n";
+                        $content .= ".{$prefix}{$type}-{$position}\:none {\n";
+                        $content .= "\t{$type}-{$position}: 0;\n";
                         $content .= "}\n";
                     }
                 }

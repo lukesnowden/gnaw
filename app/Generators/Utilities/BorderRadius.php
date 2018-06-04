@@ -8,7 +8,7 @@ use Ensphere\Gnaw\Generators\Generator;
 use Ensphere\Gnaw\Traits\Color;
 use Ensphere\Gnaw\Traits\Media;
 
-class Colors extends SelectorGenerator implements Generator
+class BorderRadius extends SelectorGenerator implements Generator
 {
 
     use Media, Color;
@@ -25,17 +25,11 @@ class Colors extends SelectorGenerator implements Generator
             if( $prefix ) {
                 $content .= "@media(min-width: {$size}px) {\n";
             }
-            foreach( $this->colorTypes as $type ) {
-                foreach( config( 'gnaw.colors' ) as $colour => $hexCode ) {
-                    $content .= ".{$prefix}{$type}\:{$colour},\n";
-                    $content .= ".{$prefix}{$type}\:{$colour}:visited {\n";
-                    $content .= "\t{$type}: {$hexCode};\n";
-                    $content .= "}\n";
-
-                    $content .= ".{$prefix}{$type}\:{$colour}\:hover:hover {\n";
-                    $content .= "\t{$type}: {$hexCode};\n";
-                    $content .= "}\n";
-                }
+            foreach( config( 'gnaw.spacing' ) as $spacingName => $spacingValue ) {
+                $borderRadius = gnaw_config( "gnaw.spacing.{$spacingName}" );
+                $content .= ".{$prefix}border-radius\:{$spacingName} {\n";
+                $content .= "border-radius: {$borderRadius}px;\n";
+                $content .= "}\n";
             }
             if( $prefix ) {
                 $content .= "}\n";

@@ -3,8 +3,8 @@
 return [
 
     'border-radius' => '0',
-    'border-color' => 'colors.grey.dark',
-    'color' => 'colors.black.default',
+    'border-color' => 'colors.dark-grey',
+    'color' => 'colors.black',
     'font-size' => 'text.font-size'
 
 ];

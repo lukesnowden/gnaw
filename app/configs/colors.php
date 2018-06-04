@@ -2,58 +2,38 @@
 
 return [
 
-    'white' => [
-        'default'   => '#FFFFFF',
-        'light'     => '#FFFFFF',
-        'dark'      => '#f2f2f2'
-    ],
+    'white' => '#FFFFFF',
+    'dark-white' => '#f2f2f2',
 
-    'black' => [
-        'default'   => '#000000',
-        'light'     => '#646464',
-        'dark'      => '#000000'
-    ],
+    'black' => '#000000',
+    'light-black' => '#646464',
 
-    'blue' => [
-        'default'   => '#2980b9',
-        'light'     => '#8de4ff',
-        'dark'      => '#001c55'
-    ],
+    'blue' => '#2980b9',
+    'dark-blue' => '#001c55',
+    'light-blue' => '#8de4ff',
 
-    'green' => [
-        'default'   => '#27ae60',
-        'light'     => '#59d98e',
-        'dark'      => '#186839'
-    ],
+    'green' => '#27ae60',
+    'dark-green' => '#186839',
+    'light-green' => '#59d98e',
 
-    'grey' => [
-        'default'   => '#bdc3c7',
-        'light'     => '#f1f2f3',
-        'dark'      => '#9fa7ad'
-    ],
+    'grey' => '#979797',
+    'dark-grey' => '#9fa7ad',
+    'light-grey' => '#f1f2f3',
 
-    'orange' => [
-        'default'   => '#f39c12',
-        'light'     => '#f7c36e',
-        'dark'      => '#da8b0b'
-    ],
+    'orange' => '#f39c12',
+    'dark-orange' => '#da8b0b',
+    'light-orange' => '#f7c36e',
 
-    'yellow' => [
-        'default'   => '#f2ca26',
-        'light'     => '#f7db6e',
-        'dark'      => '#d9b00d'
-    ],
+    'yellow'   => '#f2ca26',
+    'dark-yellow' => '#d9b00d',
+    'light-yellow' => '#f7db6e',
 
-    'purple' => [
-        'default'   => '#9b59b6',
-        'light'     => '#bf95d0',
-        'dark'      => '#68367c'
-    ],
+    'purple' => '#9b59b6',
+    'dark-purple' => '#68367c',
+    'light-purple' => '#bf95d0',
 
-    'red' => [
-        'default'   => '#e74c3c',
-        'light'     => '#f1978e',
-        'dark'      => '#cc2b19'
-    ],
+    'red' => '#e74c3c',
+    'dark-red' => '#cc2b19',
+    'light-red' => '#f1978e',
 
 ];

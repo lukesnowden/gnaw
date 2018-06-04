@@ -2,7 +2,7 @@
 
 return [
 
-    'color' => 'colors.grey.dark',
+    'color' => 'colors.dark-grey',
     'font-family' => "'Open Sans', Arial, serif",
     'font-size' => '16',
     'line-height-percentage' => '40',
@@ -27,7 +27,7 @@ return [
 
     'headings' => [
 
-        'color' => 'colors.black.default',
+        'color' => 'colors.black',
         'font-family' => "'BenchNine', sans-serif",
         'spacing' => '20',
 
@@ -51,8 +51,9 @@ return [
 
     'anchors' => [
 
-        'color' => 'colors.blue.dark',
-        'hover-color' => 'colors.blue.default',
+        'color' => 'colors.dark-blue',
+        'hover-color' => 'colors.blue',
+        'transition' => 'background-color 0.3s, color 0.3s',
 
     ]
 
