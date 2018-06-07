@@ -3,6 +3,7 @@
 namespace Ensphere\Gnaw\Contracts;
 
 use Ensphere\Gnaw\Generators\Utilities\Menus;
+use Ensphere\Gnaw\Generators\Utilities\Shadows;
 use Ensphere\Gnaw\PCSSBuilder;
 use Ensphere\Gnaw\Generators\Utilities\Buttons;
 use Ensphere\Gnaw\Generators\Utilities\Colors;
@@ -32,7 +33,8 @@ class Utilities implements PCSSBuilder
         Helpers::class,
         Spacing::class,
         Menus::class,
-        BorderRadius::class
+        BorderRadius::class,
+        Shadows::class
     ];
 
     /**

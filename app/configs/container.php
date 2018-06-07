@@ -4,8 +4,8 @@ return [
 
 
     'grid-column' => [],
-    'default-padding' => 'spacing.small',
-    'column-gutter-size' => 'spacing.large',
+    'default-padding' => 'gnaw:spacing.small',
+    'column-gutter-size' => 'gnaw:spacing.large',
 
     'sizes' => [
         'phablet' => [

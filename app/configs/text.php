@@ -2,7 +2,7 @@
 
 return [
 
-    'color' => 'colors.dark-grey',
+    'color' => 'gnaw:colors.dark-grey',
     'font-family' => "'Open Sans', Arial, serif",
     'font-size' => '16',
     'line-height-percentage' => '40',
@@ -15,7 +15,7 @@ return [
             'font-size' => '12'
         ],
         'medium' => [
-            'font-size' => 'text.font-size'
+            'font-size' => 'gnaw:text.font-size'
         ],
         'large' => [
             'font-size' => '22'
@@ -27,7 +27,7 @@ return [
 
     'headings' => [
 
-        'color' => 'colors.black',
+        'color' => 'gnaw:colors.black',
         'font-family' => "'BenchNine', sans-serif",
         'spacing' => '20',
 
@@ -51,8 +51,8 @@ return [
 
     'anchors' => [
 
-        'color' => 'colors.dark-blue',
-        'hover-color' => 'colors.blue',
+        'color' => 'gnaw:colors.dark-blue',
+        'hover-color' => 'gnaw:colors.blue',
         'transition' => 'background-color 0.3s, color 0.3s',
 
     ]

@@ -40,15 +40,9 @@ input[type="time"],
 input[type="url"],
 textarea {
     background: none;
-    border: 1px solid $form--border-color;
+    border: $form--border-size solid $form--border-color;
     border-radius: $form--border-radius;
-    color: $form--color;
-    font-size: $form--font-size;
-    line-height: $form--line-height;
-    margin-bottom: $space--medium;
     outline: none;
-    padding: $space--small $space--large;
-    width: 100%;
     outline: 0;
 }
 
@@ -65,6 +59,7 @@ input[type="month"]::placeholder,
 input[type="week"]::placeholder,
 input[type="time"]::placeholder,
 input[type="url"]::placeholder,
+textarea::placeholder,
 textarea {
     color: $form--color;
     opacity: 0.75;
@@ -75,9 +70,21 @@ textarea {
 }
 
 select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
     max-width: 100%;
     width: auto;
     vertical-align: top;
+    border-width: 3px;
+    border-type: solid;
+    border-color: white;
+    cursor: pointer;
+    border-radius: 8px;
+    background-image: url("/package/search-a-subby/front/images/arrow.svg");
+    background-repeat: no-repeat;
+    background-position-y: 50%;
+    background-position-x: 90%;
 }
 
 input[type="file"] {

@@ -2,13 +2,13 @@
 
 return [
 
-    'font-family' => 'text.headings.font-family',
+    'font-family' => 'gnaw:text.headings.font-family',
     'transition' => 'background-color 0.3s, color 0.3s',
     'font-weight' => 'normal',
     'gradient' => false,
     'background' => 'transparent',
-    'color' => 'colors.blue',
-    'border-color' => 'colors.blue',
+    'color' => 'gnaw:colors.blue',
+    'border-color' => 'gnaw:colors.blue',
     'border-size' => '0',
     'border-radius' => '0',
     'border-style' => 'solid',
@@ -17,8 +17,8 @@ return [
     'types' => [
 
         'blue' => [
-            'background' => 'colors.blue',
-            'color' => 'colors.white',
+            'background' => 'gnaw:colors.blue',
+            'color' => 'gnaw:colors.white',
             'hover' => []
         ],
 

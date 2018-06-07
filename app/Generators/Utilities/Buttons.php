@@ -26,17 +26,18 @@ class Buttons extends SelectorGenerator implements Generator
             }
             foreach( config( 'gnaw.buttons.types' ) as $typeName => $details ) {
 
-                $background = gnaw_config( "gnaw.buttons.types.{$typeName}.background" ) ?: config( 'gnaw.buttons.background' );
-                $color = gnaw_config( "gnaw.buttons.types.{$typeName}.color" ) ?: config( 'gnaw.buttons.color' );
-                $borderColor = gnaw_config( "gnaw.buttons.types.{$typeName}.border-color" ) ?: config( 'gnaw.buttons.border-color' );
-                $borderSize = gnaw_config( "gnaw.buttons.types.{$typeName}.border-size" ) ?: config( 'gnaw.buttons.border-size' );
-                $borderRadius = gnaw_config( "gnaw.buttons.types.{$typeName}.border-radius" ) ?: config( 'gnaw.buttons.border-radius' );
-                $borderStyle = gnaw_config( "gnaw.buttons.types.{$typeName}.border-style" ) ?: config( 'gnaw.buttons.border-style' );
-                $transition = gnaw_config( "gnaw.buttons.types.{$typeName}.transition" ) ?: config( 'gnaw.buttons.transition' );
-                $padding = gnaw_config( "gnaw.buttons.types.{$typeName}.padding" ) ?: config( 'gnaw.buttons.padding' );
+                $background = gnaw_config( "gnaw.buttons.types.{$typeName}.background" ) ?: gnaw_config( 'gnaw.buttons.background' );
+                $color = gnaw_config( "gnaw.buttons.types.{$typeName}.color" ) ?: gnaw_config( 'gnaw.buttons.color' );
+                $borderColor = gnaw_config( "gnaw.buttons.types.{$typeName}.border-color" ) ?: gnaw_config( 'gnaw.buttons.border-color' );
+                $borderSize = gnaw_config( "gnaw.buttons.types.{$typeName}.border-size" ) !== null ? gnaw_config( "gnaw.buttons.types.{$typeName}.border-size" ) : gnaw_config( 'gnaw.buttons.border-size' );
+                $borderRadius = gnaw_config( "gnaw.buttons.types.{$typeName}.border-radius" ) ?: gnaw_config( 'gnaw.buttons.border-radius' );
+                $borderStyle = gnaw_config( "gnaw.buttons.types.{$typeName}.border-style" ) ?: gnaw_config( 'gnaw.buttons.border-style' );
+                $transition = gnaw_config( "gnaw.buttons.types.{$typeName}.transition" ) ?: gnaw_config( 'gnaw.buttons.transition' );
+                $padding = gnaw_config( "gnaw.buttons.types.{$typeName}.padding" ) ?: gnaw_config( 'gnaw.buttons.padding' );
 
                 $content .= ".{$prefix}button\:{$typeName}{\n";
                 $content .= "\tdisplay: inline-block;\n";
+                $content .= "\tcursor: pointer;\n";
                 $content .= "\ttext-align: center;\n";
                 $content .= "\ttransition: {$transition};\n";
                 $content .= "\tbackground: {$background};\n";

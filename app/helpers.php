@@ -16,8 +16,8 @@ function gnaw_config( $selector )
  */
 function gnaw_dot_notation( $str )
 {
-    if( is_string( $str ) && str_contains( $str, '.' ) ) {
-        return config( 'gnaw.' . $str );
+    if( is_string( $str ) && starts_with( $str, 'gnaw:' ) ) {
+        return config( 'gnaw.' . str_replace( 'gnaw:', '', $str ) );
     }
     return $str;
 }

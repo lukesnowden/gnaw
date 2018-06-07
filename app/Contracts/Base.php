@@ -92,6 +92,7 @@ class Base implements PCSSBuilder
             '$form--border-radius' => gnaw_config( 'gnaw.form.border-radius' ) . 'px',
             '$form--color' => gnaw_config( 'gnaw.form.color' ),
             '$form--font-size' => gnaw_config( 'gnaw.form.font-size' ) . 'px',
+            '$form--border-size' => gnaw_config( 'gnaw.form.border-size' ) . 'px',
             '$form--line-height' => line_height( 'gnaw.form.font-size' ),
 
             '$table--border-width' => gnaw_config( 'gnaw.table.border-width' ) . 'px',

@@ -25,12 +25,24 @@ class Helpers extends SelectorGenerator implements Generator
             if( $prefix ) {
                 $content .= "@media(min-width: {$size}px) {\n";
             }
-            $content .= ".{$prefix}position\:absolute { position: absolute; }\n";
-            $content .= ".{$prefix}position\:relative { position: relative; }\n";
-            $content .= ".{$prefix}position\:static { position: static; }\n";
 
             $content .= ".{$prefix}stick\:right\:middle { position: absolute; right: 0; top: 50%; transform: translateY(-50%); }\n";
+            $content .= ".{$prefix}stick\:right\:top { position: absolute; right: 0; top: 0; }\n";
+            $content .= ".{$prefix}stick\:right\:bottom { position: absolute; right: 0; bottom: 0; }\n";
             $content .= ".{$prefix}stick\:left\:middle { position: absolute; left: 0; top: 50%; transform: translateY(-50%); }\n";
+            $content .= ".{$prefix}stick\:left\:top { position: absolute; left: 0; top: 0; }\n";
+            $content .= ".{$prefix}stick\:left\:bottom { position: absolute; left: 0; bottom: 0; }\n";
+
+            $content .= ".{$prefix}children\:central { display: flex; justify-content: center; flex-wrap: wrap; }\n";
+            $content .= ".{$prefix}children\:central > * { display:block; }\n";
+            $content .= ".{$prefix}children\:same-height { display: flex; }\n";
+            $content .= ".{$prefix}children\:same-height > * { flex: 1 1 auto; }\n";
+            $content .= ".{$prefix}children\:vertically-aligned { position:relative; }\n";
+            $content .= ".{$prefix}children\:vertically-aligned > * { position:relative; top: 50%; transform: translateY(-50%); }\n";
+            $content .= ".{$prefix}middle-child\:centered { display: flex; }";
+            $content .= ".{$prefix}middle-child\:centered > *:nth-child(1) { flex: 1 1 100%; }";
+            $content .= ".{$prefix}middle-child\:centered > *:nth-child(3) { flex: 1 1 100%; }";
+            $content .= ".{$prefix}middle-child\:centered > *:nth-child(2) { flex: 0 0 auto; }";
 
             $content .= ".{$prefix}z-index\:low { z-index:1; }\n";
             $content .= ".{$prefix}z-index\:medium { z-index:10; }\n";
@@ -38,6 +50,10 @@ class Helpers extends SelectorGenerator implements Generator
 
             $content .= ".{$prefix}overflow\:hidden { overflow: hidden; }\n";
             $content .= ".{$prefix}overflow\:visible { overflow: visible; }\n";
+
+            $content .= ".{$prefix}position\:absolute { position: absolute; }\n";
+            $content .= ".{$prefix}position\:relative { position: relative; }\n";
+            $content .= ".{$prefix}position\:static { position: static; }\n";
 
             $content .= ".{$prefix}font-weight\:normal { font-weight: normal; }\n";
             $content .= ".{$prefix}font-weight\:bold { font-weight: bold; }\n";
@@ -54,16 +70,9 @@ class Helpers extends SelectorGenerator implements Generator
             $content .= ".{$prefix}display\:block { display:block; }\n";
             $content .= ".{$prefix}display\:flex { display:flex; }\n";
             $content .= ".{$prefix}round { border-radius:100%; overflow: hidden; }\n";
-            $content .= ".{$prefix}children\:central { display: flex; justify-content: center; flex-wrap: wrap; }\n";
-            $content .= ".{$prefix}children\:central > * { display:block; }\n";
-            $content .= ".{$prefix}children\:same-height { display: flex; }\n";
-            $content .= ".{$prefix}children\:same-height > * { flex: 1 1 auto; }\n";
-            $content .= ".{$prefix}children\:vertically-aligned { position:relative; }\n";
-            $content .= ".{$prefix}children\:vertically-aligned > * { position:relative; top: 50%; transform: translateY(-50%); }\n";
-            $content .= ".{$prefix}middle-child\:centered { display: flex; }";
-            $content .= ".{$prefix}middle-child\:centered > *:nth-child(1) { flex: 1 1 100%; }";
-            $content .= ".{$prefix}middle-child\:centered > *:nth-child(3) { flex: 1 1 100%; }";
-            $content .= ".{$prefix}middle-child\:centered > *:nth-child(2) { flex: 0 0 auto; }";
+
+
+            $content .= ".{$prefix}font-style\:italic { font-style:italic; }\n";
             if( $prefix ) {
                 $content .= "}\n";
             }
