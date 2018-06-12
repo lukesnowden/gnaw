@@ -36,7 +36,7 @@ class Helpers extends SelectorGenerator implements Generator
             $content .= ".{$prefix}children\:central { display: flex; justify-content: center; flex-wrap: wrap; }\n";
             $content .= ".{$prefix}children\:central > * { display:block; }\n";
             $content .= ".{$prefix}children\:same-height { display: flex; }\n";
-            $content .= ".{$prefix}children\:same-height > * { flex: 1 1 auto; }\n";
+            $content .= ".{$prefix}children\:same-height > * { flex: 0 1 auto; }\n";
             $content .= ".{$prefix}children\:vertically-aligned { position:relative; }\n";
             $content .= ".{$prefix}children\:vertically-aligned > * { position:relative; top: 50%; transform: translateY(-50%); }\n";
             $content .= ".{$prefix}middle-child\:centered { display: flex; }";
