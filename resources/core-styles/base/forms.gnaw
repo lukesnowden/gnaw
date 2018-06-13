@@ -59,8 +59,7 @@ input[type="month"]::placeholder,
 input[type="week"]::placeholder,
 input[type="time"]::placeholder,
 input[type="url"]::placeholder,
-textarea::placeholder,
-textarea {
+textarea::placeholder {
     color: $form--color;
     opacity: 0.75;
 }

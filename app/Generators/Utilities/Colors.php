@@ -35,6 +35,12 @@ class Colors extends SelectorGenerator implements Generator
                     $content .= ".{$prefix}{$type}\:{$colour}\:hover:hover {\n";
                     $content .= "\t{$type}: {$hexCode};\n";
                     $content .= "}\n";
+
+                    if( $type === 'color' ) {
+                        $content .= ".{$prefix}placeholder-{$type}\:{$colour}::placeholder {\n";
+                        $content .= "\t{$type}: {$hexCode} !important;\n";
+                        $content .= "}\n";
+                    }
                 }
             }
             if( $prefix ) {
