@@ -73,7 +73,7 @@ class Helpers extends SelectorGenerator implements Generator
             $content .= ".{$prefix}round { border-radius:100%; overflow: hidden; }\n";
 
             $content .= ".{$prefix}font-style\:italic { font-style:italic; }\n";
-            $content .= ".{$prefix}text-decoration\:underlined { text-decoration:underlined; }\n";
+            $content .= ".{$prefix}text-decoration\:underline { text-decoration:underline; }\n";
 
             if( $prefix ) {
                 $content .= "}\n";
