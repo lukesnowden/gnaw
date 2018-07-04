@@ -47,6 +47,7 @@ class Helpers extends SelectorGenerator implements Generator
             $content .= ".{$prefix}z-index\:low { z-index:1; }\n";
             $content .= ".{$prefix}z-index\:medium { z-index:10; }\n";
             $content .= ".{$prefix}z-index\:high { z-index:50; }\n";
+            $content .= ".{$prefix}z-index\:higher { z-index:100; }\n";
 
             $content .= ".{$prefix}overflow\:hidden { overflow: hidden; }\n";
             $content .= ".{$prefix}overflow\:visible { overflow: visible; }\n";
@@ -71,8 +72,9 @@ class Helpers extends SelectorGenerator implements Generator
             $content .= ".{$prefix}display\:flex { display:flex; }\n";
             $content .= ".{$prefix}round { border-radius:100%; overflow: hidden; }\n";
 
-
             $content .= ".{$prefix}font-style\:italic { font-style:italic; }\n";
+            $content .= ".{$prefix}text-decoration\:underlined { text-decoration:underlined; }\n";
+
             if( $prefix ) {
                 $content .= "}\n";
             }
