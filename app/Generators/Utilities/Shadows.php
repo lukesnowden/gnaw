@@ -45,7 +45,7 @@ class Shadows extends SelectorGenerator implements Generator
                 $blur = isset( $settings['blur'] ) ? gnaw_config( "gnaw.shadows.text.{$name}.blur" ) . 'px' : '0px';
                 $color = isset( $settings['color'] ) ? gnaw_config( "gnaw.shadows.text.{$name}.color" ) : '#000000';
 
-                $content .= ".{$prefix}box-shadow\:{$name} {\n";
+                $content .= ".{$prefix}text-shadow\:{$name} {\n";
                 $content .= "text-shadow: {$hOffset} {$vOffset} {$blur} {$color};\n";
                 $content .= "}\n";
 
