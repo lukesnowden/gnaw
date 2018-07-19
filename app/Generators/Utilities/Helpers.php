@@ -70,6 +70,8 @@ class Helpers extends SelectorGenerator implements Generator
             $content .= ".{$prefix}display\:none { display:none; }\n";
             $content .= ".{$prefix}display\:block { display:block; }\n";
             $content .= ".{$prefix}display\:flex { display:flex; }\n";
+            $content .= ".{$prefix}display\:inline { display:inline; }\n";
+            $content .= ".{$prefix}display\:inline-block { display:inline-block; }\n";
             $content .= ".{$prefix}round { border-radius:100%; overflow: hidden; }\n";
 
             $content .= ".{$prefix}font-style\:italic { font-style:italic; }\n";
