@@ -39,10 +39,8 @@ input[type="week"],
 input[type="time"],
 input[type="url"],
 textarea {
-    background: none;
     border: $form--border-size solid $form--border-color;
     border-radius: $form--border-radius;
-    outline: none;
     outline: 0;
 }
 
