@@ -41,10 +41,14 @@ class Helpers extends SelectorGenerator implements Generator
             $content .= ".{$prefix}children\:same-height > * { flex: 0 1 auto; }\n";
             $content .= ".{$prefix}children\:vertically-aligned { position:relative; }\n";
             $content .= ".{$prefix}children\:vertically-aligned > * { position:relative; top: 50%; transform: translateY(-50%); }\n";
+
             $content .= ".{$prefix}middle-child\:centered { display: flex; }";
             $content .= ".{$prefix}middle-child\:centered > *:nth-child(1) { flex: 1 1 100%; }";
             $content .= ".{$prefix}middle-child\:centered > *:nth-child(3) { flex: 1 1 100%; }";
             $content .= ".{$prefix}middle-child\:centered > *:nth-child(2) { flex: 0 0 auto; }";
+
+            $content .= ".{$prefix}child\:vertically-aligned { display: block; position:relative; }";
+            $content .= ".{$prefix}child\:vertically-aligned > * { position: absolute; top: 50%; transform: translateY(-50%); }";
 
             $content .= ".{$prefix}z-index\:low { z-index:1; }\n";
             $content .= ".{$prefix}z-index\:medium { z-index:10; }\n";
