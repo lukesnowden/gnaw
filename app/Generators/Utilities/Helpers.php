@@ -78,7 +78,7 @@ class Helpers extends SelectorGenerator implements Generator
 
             $content .= ".{$prefix}font-style\:italic { font-style:italic; }\n";
             $content .= ".{$prefix}text-decoration\:underline { text-decoration:underline; }\n";
-            $content .= ".{$prefix}full-width\:underline { width:100%; }\n";
+            $content .= ".{$prefix}full-width { width:100%; }\n";
 
             if( $prefix ) {
                 $content .= "}\n";
