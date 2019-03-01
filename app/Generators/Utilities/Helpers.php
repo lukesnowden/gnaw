@@ -85,6 +85,8 @@ class Helpers extends SelectorGenerator implements Generator
             $content .= ".{$prefix}text-decoration\:line-through { text-decoration:line-through; }\n";
             $content .= ".{$prefix}full-width { width:100%; }\n";
             $content .= ".{$prefix}flex\:vertical-align { display: flex; align-items: center; justify-content: center; }\n";
+            $content .= ".{$prefix}flex\:vertical-align\:left { display: flex; align-items: center; justify-content: flex-start; }\n";
+            $content .= ".{$prefix}flex\:vertical-align\:right { display: flex; align-items: center; justify-content: flex-end; }\n";
 
             if( $prefix ) {
                 $content .= "}\n";
