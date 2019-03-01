@@ -62,6 +62,7 @@ class Helpers extends SelectorGenerator implements Generator
             $content .= ".{$prefix}position\:relative { position: relative; }\n";
             $content .= ".{$prefix}position\:static { position: static; }\n";
 
+            $content .= ".{$prefix}flex { flex: 1; }\n";
             $content .= ".{$prefix}flex\:vertical-align { display: flex; align-items: center; justify-content: center; }\n";
             $content .= ".{$prefix}flex\:vertical-align\:left { display: flex; align-items: center; justify-content: flex-start; }\n";
             $content .= ".{$prefix}flex\:vertical-align\:right { display: flex; align-items: center; justify-content: flex-end; }\n";
