@@ -1,5 +1,5 @@
 {
-    "name": "ensphere/gnaw",
+    "name": "lukesnowden/gnaw",
     "description": "Generates front end scaffold",
     "license": "MIT",
     "authors": [
@@ -13,7 +13,7 @@
             "app/helpers.php"
         ],
         "psr-4": {
-            "Ensphere\\Gnaw\\": "app/"
+            "LukeSnowden\\Gnaw\\": "app/"
         }
     },
     "require": {

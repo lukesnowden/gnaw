@@ -1,13 +1,13 @@
 <?php
 
-namespace Ensphere\Gnaw\Console\Commands;
+namespace LukeSnowden\Gnaw\Console\Commands;
 
-use Ensphere\Gnaw\Contracts\Helpers;
-use Ensphere\Gnaw\Contracts\Resets;
-use Ensphere\Gnaw\Contracts\Utilities;
-use Ensphere\Gnaw\Contracts\Base;
-use Ensphere\Gnaw\PCSSBuilder;
-use Ensphere\Gnaw\PCSSFile;
+use LukeSnowden\Gnaw\Contracts\Helpers;
+use LukeSnowden\Gnaw\Contracts\Resets;
+use LukeSnowden\Gnaw\Contracts\Utilities;
+use LukeSnowden\Gnaw\Contracts\Base;
+use LukeSnowden\Gnaw\PCSSBuilder;
+use LukeSnowden\Gnaw\PCSSFile;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Storage;
 

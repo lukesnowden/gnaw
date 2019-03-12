@@ -1,17 +1,17 @@
 <?php
 
-namespace Ensphere\Gnaw\Contracts;
+namespace LukeSnowden\Gnaw\Contracts;
 
-use Ensphere\Gnaw\Generators\Utilities\Menus;
-use Ensphere\Gnaw\Generators\Utilities\Shadows;
-use Ensphere\Gnaw\PCSSBuilder;
-use Ensphere\Gnaw\Generators\Utilities\Buttons;
-use Ensphere\Gnaw\Generators\Utilities\Colors;
-use Ensphere\Gnaw\Generators\Utilities\Columns;
-use Ensphere\Gnaw\Generators\Utilities\FontSizes;
-use Ensphere\Gnaw\Generators\Utilities\Helpers;
-use Ensphere\Gnaw\Generators\Utilities\Spacing;
-use Ensphere\Gnaw\Generators\Utilities\BorderRadius;
+use LukeSnowden\Gnaw\Generators\Utilities\Menus;
+use LukeSnowden\Gnaw\Generators\Utilities\Shadows;
+use LukeSnowden\Gnaw\PCSSBuilder;
+use LukeSnowden\Gnaw\Generators\Utilities\Buttons;
+use LukeSnowden\Gnaw\Generators\Utilities\Colors;
+use LukeSnowden\Gnaw\Generators\Utilities\Columns;
+use LukeSnowden\Gnaw\Generators\Utilities\FontSizes;
+use LukeSnowden\Gnaw\Generators\Utilities\Helpers;
+use LukeSnowden\Gnaw\Generators\Utilities\Spacing;
+use LukeSnowden\Gnaw\Generators\Utilities\BorderRadius;
 
 class Utilities implements PCSSBuilder
 {

@@ -1,16 +1,16 @@
 <?php
 
-namespace Ensphere\Gnaw\Contracts;
+namespace LukeSnowden\Gnaw\Contracts;
 
-use Ensphere\Gnaw\Generators\Base\Code;
-use Ensphere\Gnaw\Generators\Base\Container;
-use Ensphere\Gnaw\Generators\Base\Forms;
-use Ensphere\Gnaw\Generators\Base\Images;
-use Ensphere\Gnaw\Generators\Base\Lists;
-use Ensphere\Gnaw\Generators\Base\Page;
-use Ensphere\Gnaw\Generators\Base\Tables;
-use Ensphere\Gnaw\Generators\Base\Text;
-use Ensphere\Gnaw\PCSSBuilder;
+use LukeSnowden\Gnaw\Generators\Base\Code;
+use LukeSnowden\Gnaw\Generators\Base\Container;
+use LukeSnowden\Gnaw\Generators\Base\Forms;
+use LukeSnowden\Gnaw\Generators\Base\Images;
+use LukeSnowden\Gnaw\Generators\Base\Lists;
+use LukeSnowden\Gnaw\Generators\Base\Page;
+use LukeSnowden\Gnaw\Generators\Base\Tables;
+use LukeSnowden\Gnaw\Generators\Base\Text;
+use LukeSnowden\Gnaw\PCSSBuilder;
 
 class Base implements PCSSBuilder
 {

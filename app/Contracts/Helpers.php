@@ -1,9 +1,9 @@
 <?php
 
-namespace Ensphere\Gnaw\Contracts;
+namespace LukeSnowden\Gnaw\Contracts;
 
-use Ensphere\Gnaw\Generators\Helpers\ClearFix;
-use Ensphere\Gnaw\PCSSBuilder;
+use LukeSnowden\Gnaw\Generators\Helpers\ClearFix;
+use LukeSnowden\Gnaw\PCSSBuilder;
 
 class Helpers implements PCSSBuilder
 {

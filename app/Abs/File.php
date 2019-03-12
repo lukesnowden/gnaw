@@ -1,6 +1,6 @@
 <?php
 
-namespace Ensphere\Gnaw\Abs;
+namespace LukeSnowden\Gnaw\Abs;
 
 use Illuminate\Support\Facades\Storage;
 

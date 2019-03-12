@@ -1,11 +1,11 @@
 <?php
 
-namespace Ensphere\Gnaw\Generators\Utilities;
+namespace LukeSnowden\Gnaw\Generators\Utilities;
 
-use Ensphere\Gnaw\Abs\SelectorGenerator;
-use Ensphere\Gnaw\Contracts\GnawFile;
-use Ensphere\Gnaw\Generators\Generator;
-use Ensphere\Gnaw\Traits\Media;
+use LukeSnowden\Gnaw\Abs\SelectorGenerator;
+use LukeSnowden\Gnaw\Contracts\GnawFile;
+use LukeSnowden\Gnaw\Generators\Generator;
+use LukeSnowden\Gnaw\Traits\Media;
 
 class Buttons extends SelectorGenerator implements Generator
 {

@@ -1,9 +1,9 @@
 <?php
 
-namespace Ensphere\Gnaw\Abs;
+namespace LukeSnowden\Gnaw\Abs;
 
-use Ensphere\Gnaw\Contracts\GnawFile;
-use Ensphere\Gnaw\Generators\Generator;
+use LukeSnowden\Gnaw\Contracts\GnawFile;
+use LukeSnowden\Gnaw\Generators\Generator;
 
 abstract class SelectorGenerator implements Generator
 {

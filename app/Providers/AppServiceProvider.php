@@ -1,8 +1,8 @@
 <?php
 
-namespace Ensphere\Gnaw\Providers;
+namespace LukeSnowden\Gnaw\Providers;
 
-use Ensphere\Gnaw\Console\Commands\FrontDevBuilder;
+use LukeSnowden\Gnaw\Console\Commands\FrontDevBuilder;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider

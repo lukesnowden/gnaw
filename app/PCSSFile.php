@@ -1,6 +1,6 @@
 <?php
 
-namespace Ensphere\Gnaw;
+namespace LukeSnowden\Gnaw;
 
 interface PCSSFile
 {

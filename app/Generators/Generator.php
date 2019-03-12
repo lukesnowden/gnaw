@@ -1,8 +1,8 @@
 <?php
 
-namespace Ensphere\Gnaw\Generators;
+namespace LukeSnowden\Gnaw\Generators;
 
-use Ensphere\Gnaw\Contracts\GnawFile;
+use LukeSnowden\Gnaw\Contracts\GnawFile;
 
 interface Generator
 {

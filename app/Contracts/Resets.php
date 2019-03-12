@@ -1,10 +1,10 @@
 <?php
 
-namespace Ensphere\Gnaw\Contracts;
+namespace LukeSnowden\Gnaw\Contracts;
 
-use Ensphere\Gnaw\Generators\Resets\Normalise;
-use Ensphere\Gnaw\Generators\Resets\Reset;
-use Ensphere\Gnaw\PCSSBuilder;
+use LukeSnowden\Gnaw\Generators\Resets\Normalise;
+use LukeSnowden\Gnaw\Generators\Resets\Reset;
+use LukeSnowden\Gnaw\PCSSBuilder;
 
 class Resets implements PCSSBuilder
 {

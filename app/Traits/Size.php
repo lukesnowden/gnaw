@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Ensphere\Gnaw\Traits;
+namespace LukeSnowden\Gnaw\Traits;
 
 
 trait Size

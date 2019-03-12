@@ -1,9 +1,9 @@
 <?php
 
-namespace Ensphere\Gnaw\Contracts;
+namespace LukeSnowden\Gnaw\Contracts;
 
-use Ensphere\Gnaw\Abs\File;
-use Ensphere\Gnaw\PCSSFile;
+use LukeSnowden\Gnaw\Abs\File;
+use LukeSnowden\Gnaw\PCSSFile;
 
 class ConfigFile extends File implements PCSSFile
 {
