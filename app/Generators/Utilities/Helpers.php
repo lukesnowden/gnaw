@@ -28,6 +28,9 @@ class Helpers extends SelectorGenerator implements Generator
 
             $content .= ".{$prefix}border\:none { border:none; border-width:0; }\n";
 
+            $content .= ".{$prefix}sticky\:top { position: sticky; left:0; right: 0; top: 0; }\n";
+            $content .= ".{$prefix}sticky\:bottom { position: sticky; left:0; right: 0; bottom: 0; }\n";
+
             $content .= ".{$prefix}stick\:right\:middle { position: absolute; right: 0; top: 50%; transform: translateY(-50%); }\n";
             $content .= ".{$prefix}stick\:right\:top { position: absolute; right: 0; top: 0; }\n";
             $content .= ".{$prefix}stick\:right\:bottom { position: absolute; right: 0; bottom: 0; }\n";
