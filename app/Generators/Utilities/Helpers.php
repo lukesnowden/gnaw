@@ -60,6 +60,7 @@ class Helpers extends SelectorGenerator implements Generator
 
             $content .= ".{$prefix}overflow\:hidden { overflow: hidden; }\n";
             $content .= ".{$prefix}overflow\:visible { overflow: visible; }\n";
+            $content .= ".{$prefix}overflow\:auto { overflow: auto; }\n";
 
             $content .= ".{$prefix}position\:absolute { position: absolute; }\n";
             $content .= ".{$prefix}position\:relative { position: relative; }\n";
@@ -92,6 +93,7 @@ class Helpers extends SelectorGenerator implements Generator
             $content .= ".{$prefix}text-decoration\:underline { text-decoration:underline; }\n";
             $content .= ".{$prefix}text-decoration\:line-through { text-decoration:line-through; }\n";
             $content .= ".{$prefix}full-width { width:100%; }\n";
+            $content .= ".{$prefix}full-max-width { max-width:100%; }\n";
 
             if( $prefix ) {
                 $content .= "}\n";

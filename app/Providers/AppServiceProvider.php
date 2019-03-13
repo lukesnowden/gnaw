@@ -21,8 +21,10 @@ class AppServiceProvider extends ServiceProvider
             __DIR__ . '/../configs/container.php' => config_path( 'gnaw/container.php' ),
             __DIR__ . '/../configs/form.php' => config_path( 'gnaw/form.php' ),
             __DIR__ . '/../configs/spacing.php' => config_path( 'gnaw/spacing.php' ),
+            __DIR__ . '/../configs/shadows.php' => config_path( 'gnaw/shadows.php' ),
             __DIR__ . '/../configs/table.php' => config_path( 'gnaw/table.php' ),
             __DIR__ . '/../configs/text.php' => config_path( 'gnaw/text.php' ),
+            __DIR__ . '/../configs/widths.php' => config_path( 'gnaw/widths.php' ),
         ], 'config' );
 
         $this->publishes( [ __DIR__ . '/../../resources/components/' => resource_path( 'views/gnaw' ) ] );
@@ -32,8 +34,10 @@ class AppServiceProvider extends ServiceProvider
         $this->mergeConfigFrom( __DIR__ . '/../configs/container.php', 'gnaw.container' );
         $this->mergeConfigFrom( __DIR__ . '/../configs/form.php', 'gnaw.form' );
         $this->mergeConfigFrom( __DIR__ . '/../configs/spacing.php', 'gnaw.spacing' );
+        $this->mergeConfigFrom( __DIR__ . '/../configs/shadows.php', 'gnaw.shadows' );
         $this->mergeConfigFrom( __DIR__ . '/../configs/table.php', 'gnaw.table' );
         $this->mergeConfigFrom( __DIR__ . '/../configs/text.php', 'gnaw.text' );
+        $this->mergeConfigFrom( __DIR__ . '/../configs/widths.php', 'gnaw.widths' );
     }
 
     /**

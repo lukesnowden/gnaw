@@ -4,6 +4,7 @@ namespace LukeSnowden\Gnaw\Contracts;
 
 use LukeSnowden\Gnaw\Generators\Utilities\Menus;
 use LukeSnowden\Gnaw\Generators\Utilities\Shadows;
+use LukeSnowden\Gnaw\Generators\Utilities\Widths;
 use LukeSnowden\Gnaw\PCSSBuilder;
 use LukeSnowden\Gnaw\Generators\Utilities\Buttons;
 use LukeSnowden\Gnaw\Generators\Utilities\Colors;
@@ -34,7 +35,8 @@ class Utilities implements PCSSBuilder
         Spacing::class,
         Menus::class,
         BorderRadius::class,
-        Shadows::class
+        Shadows::class,
+        Widths::class
     ];
 
     /**
