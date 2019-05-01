@@ -75,7 +75,7 @@ class Base implements PCSSBuilder
             '$heading--small-line-height' => line_height( 'gnaw.text.headings.small.font-size' ),
             '$heading--very-small-font-size' => gnaw_config( 'gnaw.text.headings.very-small.font-size' ) . 'px',
             '$heading--very-small-line-height' => line_height( 'gnaw.text.headings.very-small.font-size' ),
-            '$heading--font-family' => gnaw_config( 'gnaw.text.font-family' ),
+            '$heading--font-family' => gnaw_config( 'gnaw.text.headings.font-family' ),
             '$heading--spacing' => gnaw_config( 'gnaw.text.headings.spacing' ) . 'px',
 
             '$anchor--color' => gnaw_config( 'gnaw.text.anchors.color' ),
